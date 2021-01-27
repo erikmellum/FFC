@@ -1,0 +1,7 @@
+{
+  "name": "ffc",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "react"
+}
