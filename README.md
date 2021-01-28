@@ -20,3 +20,10 @@
 
 
 ### https://github.com/google-map-react/google-map-react#readme
+
+
+## BUGS
+
+Investigate https://ionicframework.com/docs/react/pwa#service-worker-configuration
+
+This is preventing the server from returning the newest version of the app.
