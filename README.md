@@ -12,6 +12,10 @@
 
 ### https://ionicframework.com/docs/components
 
+## Example App (working example)
+
+### https://github.com/ionic-team/tutorial-photo-gallery-react
+
 ## Possible Tools
 
 
