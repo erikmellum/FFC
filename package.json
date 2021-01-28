@@ -6,7 +6,9 @@
     "@capacitor/android": "^2.4.6",
     "@capacitor/core": "2.4.6",
     "@capacitor/ios": "^2.4.6",
+    "@ionic/pwa-elements": "^3.0.2",
     "@ionic/react": "^5.0.7",
+    "@ionic/react-hooks": "0.0.8",
     "@ionic/react-router": "^5.0.7",
     "@react-google-maps/api": "^2.1.1",
     "@testing-library/jest-dom": "^4.2.4",
@@ -34,9 +36,9 @@
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "serve": "serve -s build",
-    "ios": "npx cap open ios",
-    "android": "npx cap open android",
-    "deploy": "firebase deploy"
+    "ios": "ionic cap copy && ionic cap sync && npx cap open ios",
+    "android": "ionic cap copy && ionic cap sync && npx cap open android",
+    "deploy": "npm run build-prod && firebase deploy"
   },
   "eslintConfig": {
     "extends": "react-app"

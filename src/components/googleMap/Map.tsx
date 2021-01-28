@@ -6,7 +6,7 @@ const containerStyle = {
   width: '400px',
   height: '400px'
 };
-
+console.log('GoogleApiKey', GoogleApiKey);
 const center = {
   lat: -3.745,
   lng: -38.523
