@@ -1,0 +1,11 @@
+[
+  {
+    "id": 1,
+    "name": "New Leaf House",
+    "title": "New Leaf",
+    "description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Doloremque debitis ab consectetur corporis sed provident praesentium voluptatem, neque esse rem blanditiis assumenda aut rerum laboriosam, eligendi maxime! Aliquam, consequatur dicta?",
+    "photos": "/photos/newleaf",
+    "lat": "1",
+    "long": "1"
+  }
+]

@@ -21,7 +21,7 @@ const Marker = (props: any) => {
   return <>
     <div className="pin"></div>
     <div className="pulse"></div>
-    <div className="text">{props.text}</div>
+    <div className="text">{props.title}</div>
   </>
 }
 

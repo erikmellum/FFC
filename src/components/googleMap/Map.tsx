@@ -17,12 +17,32 @@ const zoom = 3;
 
 const markers = [
   {
+    id: '1',
+    get: (id: any) => {
+      console.log('get not implemented');
+    },
     lat: '59.955413',
     lng: '30.337844',
+    title: 'New Leaf',
   }
 ]
+function onMarkerHover(index: any) {
+}
 
-
+function onChildClick() {
+  alert('mouse click');
+}
+function onChildMouseEnter(key: any, childProps: any) {
+  console.log('mouse enter');
+  const markerId = childProps.marker.get('id');
+  const index = markers.findIndex(m => m.get('id') === markerId);
+  if (onMarkerHover) {
+    onMarkerHover(index);
+  }
+}
+function onChildMouseLeave() {
+  console.log('mouse leave');
+}
  
 function Map() {
   return (
@@ -32,11 +52,13 @@ function Map() {
         bootstrapURLKeys={{ key: GoogleApiKey }}
         defaultCenter={center}
         defaultZoom={zoom}
+        onChildClick={onChildClick}
+        onChildMouseEnter={onChildMouseEnter}
+        onChildMouseLeave={onChildMouseLeave}
       >
         {markers.map(marker => (
           <Marker
             {...marker}
-            text={"New Leaf"}
             // onRightClick={() => props.onMarkerRightClick(marker)}
           />
         ))}
