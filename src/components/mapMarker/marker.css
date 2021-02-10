@@ -340,3 +340,7 @@
   font-weight: bold;
   padding: 12px;
 }
+
+.hint {
+  display: none;
+}

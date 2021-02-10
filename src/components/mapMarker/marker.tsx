@@ -21,7 +21,9 @@ const Marker = (props: any) => {
   return <>
     <div className="pin"></div>
     <div className="pulse"></div>
-    <div className="text">{props.title}</div>
+    <div className="text">{props.marker.title}</div>
+    {props.marker.showHint}
+    {props.marker.showHint ? <div className="hint">Lorem ipsum dolor sit amet consectetur adipisicing elit. Ut animi architecto, explicabo ab obcaecati, molestias blanditiis aliquid rem consequatur voluptatum excepturi vero? Ipsa eos impedit quam nisi architecto eum! Provident.</div> : ''}
   </>
 }
 
