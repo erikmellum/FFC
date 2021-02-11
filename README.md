@@ -15,7 +15,7 @@
 ## Example App (working example)
 
 ### https://github.com/ionic-team/tutorial-photo-gallery-react
-
+### https://github.com/google-map-react/old-examples/tree/master/web/flux/components/examples/x_main
 ## Possible Tools
 
 ### https://github.com/google-map-react/google-map-react#readme

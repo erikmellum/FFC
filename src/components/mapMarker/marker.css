@@ -342,5 +342,20 @@
 }
 
 .hint {
-  display: none;
+  width: 200px;
+  color: white;
+  transform: translateX(-50%);
+  background: #333;
+  padding: 1rem;
+  border-radius: 10px;
+  transition: .3s ease-out opacity;
+  opacity: 0;
+}
+
+.hint.active {
+  opacity: 1;
+}
+
+.hint-image-container {
+  padding-bottom: .5rem;
 }

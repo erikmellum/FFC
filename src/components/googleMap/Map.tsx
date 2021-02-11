@@ -24,9 +24,6 @@ function Map(props: MapProps) {
         bootstrapURLKeys={{ key: GoogleApiKey }}
         defaultCenter={center}
         defaultZoom={zoom}
-        onChildClick={props.onChildClick}
-        onChildMouseEnter={props.onChildMouseEnter}
-        onChildMouseLeave={props.onChildMouseLeave}
       >
         {props.markers ? props.markers.map((marker, index) => (
           <Marker

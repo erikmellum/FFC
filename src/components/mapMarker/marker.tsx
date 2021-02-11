@@ -14,16 +14,24 @@
 // };
 
 // export default ExploreContainer;
-
+import { useState } from 'react';
 import './marker.css';
 
 const Marker = (props: any) => {
+  const [showHint, setShowHint] = useState<Boolean>(false);
+  const handleClick = () => {
+    setShowHint(!showHint);
+  }
   return <>
-    <div className="pin"></div>
+    <div className="pin" onClick={handleClick}></div>
     <div className="pulse"></div>
     <div className="text">{props.marker.title}</div>
-    {props.marker.showHint}
-    {props.marker.showHint ? <div className="hint">Lorem ipsum dolor sit amet consectetur adipisicing elit. Ut animi architecto, explicabo ab obcaecati, molestias blanditiis aliquid rem consequatur voluptatum excepturi vero? Ipsa eos impedit quam nisi architecto eum! Provident.</div> : ''}
+      <div className={`hint ${showHint ? "active" : ""}`}>
+        <div className="hint-image-container">
+          <img src="http://placekitten.com/100/50"/>
+        </div>
+        <span>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ut animi architecto, explicabo ab obcaecati, molestias blanditiis aliquid rem consequatur voluptatum excepturi vero? Ipsa eos impedit quam nisi architecto eum! Provident.</span>
+      </div> 
   </>
 }
 
