@@ -14,13 +14,16 @@ const Marker = (props: any) => {
   return <>
     <div className="pin" onClick={handleClick}></div>
     <div className="pulse"></div>
-    <div className={`text ${props.marker.position}`} onClick={handleClick}>{props.marker.title}</div>
-      <div className={`hint ${props.marker.position} ${showHint ? "active" : ""}`}>
+    <div className={`text ${props.missionary.position}`} onClick={handleClick}>{props.missionary.title}</div>
+      <div className={`hint ${props.missionary.position} ${showHint ? "active" : ""}`}>
         <div className="hint-image-container">
           <img src="http://placekitten.com/100/50"/>
         </div>
-        <span>{props.marker.description}</span>
-        {/* <div className="send-cta"><span className="">Send a message</span> <IonIcon icon={sendOutline} /></div> */}
+        <span>{props.missionary.description}</span>
+        <a className="send-cta" href={`mailto:${props.missionary.email}?subject=Hello from Firm Family Church!&body=We are thinking of you!`} target="ffc">
+          <span>Send a message</span> 
+          <IonIcon icon={sendOutline} />
+        </a>
       </div> 
   </>
 }

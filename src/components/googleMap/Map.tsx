@@ -23,13 +23,12 @@ function Map(props: MapProps) {
         defaultCenter={center}
         defaultZoom={zoom}
       >
-        {props.markers ? props.markers.map((marker, index) => (
+        {props.missionaries ? props.missionaries.map((missionary, index) => (
           <Marker
             key = {index}
-            marker = {marker}
-            lat = {marker.lat}
-            lng = {marker.lng}
-            // onRightClick={() => props.onMarkerRightClick(marker)}
+            missionary = {missionary}
+            lat = {missionary.lat}
+            lng = {missionary.lng}
           />
         )) : ''}
       </GoogleMapReact>

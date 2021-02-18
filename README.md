@@ -32,3 +32,11 @@ https://medium.com/better-programming/let-users-know-when-you-have-updated-your-
 https://www.freecodecamp.org/news/how-to-build-a-custom-pwa-with-workbox-in-create-react-app-be580686cf73/
 
 https://ionicthemes.com/tutorials/about/the-complete-guide-to-progressive-web-apps-with-ionic4
+
+## Resources
+
+https://medium.com/firebase-developers/how-to-setup-firebase-authentication-with-react-in-5-minutes-maybe-10-bb8bb53e8834
+
+## TODO
+
+- [ ] Investigate adding Bulma

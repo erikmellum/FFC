@@ -1,0 +1,13 @@
+@import "./variables.scss";
+.send-cta {
+  padding-top: .5rem;
+  color: $blue;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  text-decoration: none;
+
+  > *:first-child {
+    padding-right: .5rem;
+  }
+}

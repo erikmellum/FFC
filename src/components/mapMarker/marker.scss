@@ -1,5 +1,4 @@
 /* https://gist.github.com/jobsamuel/56496033bfb4d0f3e316aeb88341ed16 */
-@import "../../styles/variables.scss";
 .pin {
   width: 30px;
   height: 30px;
@@ -404,16 +403,4 @@
 
 .hint-image-container {
   padding-bottom: .5rem;
-}
-
-.send-cta {
-  padding-top: .5rem;
-  color: $blue;
-  display: flex;
-  align-items: center;
-  cursor: pointer;
-
-  > *:first-child {
-    padding-right: .5rem;
-  }
 }

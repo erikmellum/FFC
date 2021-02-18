@@ -1,5 +1,5 @@
-import { Marker } from './types';
+import { Missionary } from './types';
 
 export interface MapProps {
-  markers?: Marker[]
+  missionaries?: Missionary[]
 }

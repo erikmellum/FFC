@@ -1,4 +1,5 @@
 import { IonContent, IonHeader, IonPage, IonTitle, IonToolbar } from '@ionic/react';
+import SignIn from '../../components/auth/signIn/SignIn';
 import React from 'react';
 import ExploreContainer from '../../components/exploreContainer/ExploreContainer';
 import './Home.css';
@@ -9,6 +10,7 @@ const Home: React.FC = () => {
       <IonHeader>
         <IonToolbar>
           <IonTitle>FFC Home</IonTitle>
+          <SignIn></SignIn>
         </IonToolbar>
       </IonHeader>
       <IonContent fullscreen>

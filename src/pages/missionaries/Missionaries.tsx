@@ -1,21 +1,13 @@
 import { IonContent, IonHeader, IonPage, IonTitle, IonToolbar, IonCard, IonCardHeader, IonCardSubtitle, IonCardTitle, IonCardContent, IonRow, IonCol } from '@ionic/react';
 import React from 'react';
-import ExploreContainer from '../../components/exploreContainer/ExploreContainer';
-import './Missionaries.css';
-const missionaries = [
-  {
-    photo: 'http://placekitten.com/200/200',
-    title: 'New Leaf',
-    subtitle: 'Nepal',
-    description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Nam aut repudiandae eos placeat illum inventore eaque exercitationem nulla quidem fugit officiis ullam deserunt sapiente tempora cupiditate, nostrum delectus ad dignissimos.',
-  },
-  {
-    photo: 'http://placekitten.com/200/200',
-    title: 'Paul',
-    subtitle: 'Cypress',
-    description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Nam aut repudiandae eos placeat illum inventore eaque exercitationem nulla quidem fugit officiis ullam deserunt sapiente tempora cupiditate, nostrum delectus ad dignissimos.',
-  },
-]
+import './Missionaries.scss';
+import missionaries from '../../data/missionaries';
+import {
+  IonIcon,
+} from '@ionic/react';
+
+import { sendOutline } from 'ionicons/icons';
+
 const Home: React.FC = () => {
   return (
     <IonPage>
@@ -34,16 +26,20 @@ const Home: React.FC = () => {
           <IonCard>
             <IonRow class="ion-justify-content-start">
               <IonCol size="2">
-                <img src={missionary.photo}/>
+                <img src={missionary.photo} alt={missionary.description}/>
               </IonCol>
               <IonCol size="10">            
                 <IonCardHeader>
-                  <IonCardSubtitle>{missionary.subtitle}</IonCardSubtitle>
+                  <IonCardSubtitle>{missionary.location}</IonCardSubtitle>
                   <IonCardTitle>{missionary.title}</IonCardTitle>
                 </IonCardHeader>
 
                 <IonCardContent>
                   {missionary.description}
+                  <a className="send-cta" href={`mailto:${missionary.email}?subject=Hello from Firm Family Church!&body=We are thinking of you!`} target="ffc">
+                    <span>Send a message</span> 
+                    <IonIcon icon={sendOutline} />
+                  </a>
                 </IonCardContent>
               </IonCol>
             </IonRow>
