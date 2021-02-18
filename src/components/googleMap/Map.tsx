@@ -5,13 +5,11 @@ import { GoogleApiKey } from '../../config';
 import { MapProps } from '../../types/interfaces';
 
 const containerStyle = {
-  width: '100%',
-  height: '100vh',
+  width: '100%', height: '100vh',
 };
 
 const center = {
-  lat: 0,
-  lng: 0,
+  lat: 0, lng: 0,
 };
 
 const zoom = 3;

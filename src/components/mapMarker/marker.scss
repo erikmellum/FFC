@@ -1,4 +1,5 @@
 /* https://gist.github.com/jobsamuel/56496033bfb4d0f3e316aeb88341ed16 */
+@import "../../styles/variables.scss";
 .pin {
   width: 30px;
   height: 30px;
@@ -335,27 +336,84 @@
   }
 }
 .text {
-  width: 80px;
+  width: 90px;
   color: #333;
   font-weight: bold;
   padding: 12px;
+  cursor: pointer;
+  border-radius: 3px;
+  background: rgba(255,255,255,.9);
 }
 
 .hint {
   width: 200px;
-  color: white;
+  color: #333;
   transform: translateX(-50%);
-  background: #333;
+  background: white;
   padding: 1rem;
   border-radius: 10px;
   transition: .3s ease-out opacity;
   opacity: 0;
+  cursor: auto;
+  pointer-events: none;
+}
+
+.text.left {
+  transform: translateX(-100%);
+  position: relative;
+  right: 12px;
+}
+
+.text.top {
+  margin-bottom: 12px;
+  transform: translate(-50%, -100%);
+}
+
+.text.bottom {
+  margin-top: 12px;
+  transform: translate(-50%, 100%);
+}
+
+.hint.left {
+  transform: translate(-100%, -50%);
+  position: relative;
+  right: 112px;
+  bottom: 12px;
+}
+
+.hint.right {
+  position: relative;
+  transform: translate(50%, -50%);
+  bottom: 12px;
+}
+
+.hint.bottom {
+  position: relative;
+  margin-top: 60px;
+}
+.hint.top {
+  position: relative;
+  transform: translate(-50%, -100%);
+  bottom: 124px;
 }
 
 .hint.active {
   opacity: 1;
+  pointer-events: auto;
 }
 
 .hint-image-container {
   padding-bottom: .5rem;
+}
+
+.send-cta {
+  padding-top: .5rem;
+  color: $blue;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+
+  > *:first-child {
+    padding-right: .5rem;
+  }
 }
