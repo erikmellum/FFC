@@ -50,7 +50,7 @@ const missionaries = [
     location: 'Bulgaria',
     lat: '43.2712',
     lng: '26.9361',
-    position: 'right',
+    position: 'left',
     description: 'Brenton & Debbie Driscoll are serving as missionaries with International Missions in Bulgaria.',
     title: 'Brenton & Debbie Driscoll',
   },
