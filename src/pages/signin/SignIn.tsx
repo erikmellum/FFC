@@ -37,7 +37,7 @@ const Home: React.FC<SignInProps> = ({ setSignedIn}) => {
           <IonItem>
             <IonInput value={password} type="password" placeholder="Enter password" onIonChange={e => setPassword(e.detail.value!)}></IonInput>
           </IonItem>
-          <IonButton expand="full" onClick={e => submit(username, password)}>Submit</IonButton>
+          <IonButton className="submit-button" expand="full" onClick={e => submit(username, password)}>Submit</IonButton>
         </div>
       </IonContent>
     </IonPage>
