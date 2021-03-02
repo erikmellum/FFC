@@ -29,7 +29,7 @@ const Home: React.FC<SignInProps> = ({ setSignedIn}) => {
             <IonTitle size="large">FFC Sign In</IonTitle>
           </IonToolbar>
         </IonHeader>
-        <div className="container">
+        <div className="signin-container">
           <img src="assets/ffc-logo.png"/>
           <IonItem>
             <IonInput value={username} placeholder="Enter username" onIonChange={e => setUsername(e.detail.value!)}></IonInput>
