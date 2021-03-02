@@ -26,7 +26,7 @@ const Home: React.FC = () => {
           <IonCard>
             <IonRow class="ion-justify-content-start">
               <IonCol size="2">
-                <img src={missionary.photo} alt={missionary.description}/>
+                <img className="missionary-photo" src={missionary.photo} alt={missionary.description}/>
               </IonCol>
               <IonCol size="10">            
                 <IonCardHeader>

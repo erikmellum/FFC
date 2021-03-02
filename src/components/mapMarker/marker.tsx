@@ -17,7 +17,7 @@ const Marker = (props: any) => {
     <div className={`text ${props.missionary.position}`} onClick={handleClick}>{props.missionary.title}</div>
       <div className={`hint ${props.missionary.position} ${showHint ? "active" : ""}`}>
         <div className="hint-image-container">
-          <img src="http://placekitten.com/100/50"/>
+          <img src={props.missionary.photo}/>
         </div>
         <span>{props.missionary.description}</span>
         <a className="send-cta" href={`mailto:${props.missionary.email}?subject=Hello from Firm Family Church!&body=We are thinking of you!`} target="ffc">
