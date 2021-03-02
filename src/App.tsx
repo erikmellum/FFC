@@ -1,5 +1,5 @@
 import * as dotenv from 'dotenv';
-import React from 'react';
+import React, { useState } from 'react';
 import { Redirect, Route } from 'react-router-dom';
 import {
   IonApp,
@@ -15,6 +15,7 @@ import { IonReactRouter } from '@ionic/react-router';
 import Home from './pages/home/Home';
 import Map from './pages/map/Map';
 import Missionaries from './pages/missionaries/Missionaries';
+import SignIn from './pages/signin/SignIn';
 
 /* Core CSS required for Ionic components to work properly */
 import '@ionic/react/css/core.css';
@@ -38,34 +39,40 @@ import './theme/app.scss';
 
 dotenv.config();
 
-const App: React.FC = () => (
-  <IonApp>
-    <IonReactRouter>
-      <IonTabs>
-          <IonRouterOutlet>
-            <Route path="/home" component={Home} exact={true} />
-            <Route path="/map" component={Map} exact={true} />
-            {/* <Route path="/map/details" component={Details} /> */}
-            <Route path="/missionaries" component={Missionaries} />
-            <Route path="/" render={() => <Redirect to="/home" />} exact={true} />
-          </IonRouterOutlet>
-          <IonTabBar slot="bottom">
-            <IonTabButton tab="home" href="/home">
-              <IonIcon icon={homeOutline} />
-              <IonLabel>Home</IonLabel>
-            </IonTabButton>
-            <IonTabButton tab="map" href="/map">
-              <IonIcon icon={mapOutline} />
-              <IonLabel>Map</IonLabel>
-            </IonTabButton>
-            <IonTabButton tab="missionaries" href="/missionaries">
-              <IonIcon icon={peopleOutline} />
-              <IonLabel>Missionaries</IonLabel>
-            </IonTabButton>
-          </IonTabBar>
-        </IonTabs>
-    </IonReactRouter>
-  </IonApp>
-);
+const App: React.FC = () => {
+  const [signedIn, setSignedIn] = useState<boolean>();
+  return (
+    <IonApp>
+      <IonReactRouter>
+      { signedIn ?
+        <IonTabs>
+            <IonRouterOutlet>
+              <Route path="/home" component={Home} exact={true} />
+              <Route path="/map" component={Map} exact={true} />
+              {/* <Route path="/map/details" component={Details} /> */}
+              <Route path="/missionaries" component={Missionaries} />
+              <Route path="/" render={() => <Redirect to="/home" />} exact={true} />
+            </IonRouterOutlet>
+            
+            <IonTabBar slot="bottom">
+              <IonTabButton tab="home" href="/home">
+                <IonIcon icon={homeOutline} />
+                <IonLabel>Home</IonLabel>
+              </IonTabButton>
+              <IonTabButton tab="map" href="/map">
+                <IonIcon icon={mapOutline} />
+                <IonLabel>Map</IonLabel>
+              </IonTabButton>
+              <IonTabButton tab="missionaries" href="/missionaries">
+                <IonIcon icon={peopleOutline} />
+                <IonLabel>Missionaries</IonLabel>
+              </IonTabButton>
+            </IonTabBar>
+          </IonTabs>
+          : <SignIn setSignedIn={setSignedIn}></SignIn>}
+      </IonReactRouter>
+    </IonApp>
+  );
+};
 
 export default App;
