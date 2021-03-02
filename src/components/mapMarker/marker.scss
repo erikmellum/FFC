@@ -359,6 +359,10 @@
   z-index: 2;
 }
 
+.hint-image-container img {
+  max-width: calc(200px - 2rem);
+}
+
 .text.left {
   transform: translateX(-100%);
   position: relative;
