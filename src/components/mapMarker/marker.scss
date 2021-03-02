@@ -336,7 +336,7 @@
   }
 }
 .text {
-  width: 90px;
+  width: 100px;
   color: #333;
   font-weight: bold;
   padding: 12px;
@@ -356,6 +356,7 @@
   opacity: 0;
   cursor: auto;
   pointer-events: none;
+  z-index: 2;
 }
 
 .text.left {
@@ -365,19 +366,21 @@
 }
 
 .text.top {
-  margin-bottom: 12px;
+  margin-bottom: 24px;
   transform: translate(-50%, -100%);
+  position: relative;
+  bottom: 12px;
 }
 
 .text.bottom {
   margin-top: 12px;
-  transform: translate(-50%, 100%);
+  transform: translate(-50%, 50%);
 }
 
 .hint.left {
   transform: translate(-100%, -50%);
   position: relative;
-  right: 112px;
+  right: 124px;
   bottom: 12px;
 }
 
@@ -385,11 +388,12 @@
   position: relative;
   transform: translate(50%, -50%);
   bottom: 12px;
+  left: 12px;
 }
 
 .hint.bottom {
   position: relative;
-  margin-top: 60px;
+  margin-top: 36px;
 }
 .hint.top {
   position: relative;
