@@ -1,7 +1,7 @@
 import axios from "axios";
 
 export default axios.create({
-    baseURL: "http://localhost/ffc-admin/public/api",
+    baseURL: "https://missions.givealot.org/api",
     headers: {
         "Content-type": "application/json"
     }
