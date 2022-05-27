@@ -1,14 +1,19 @@
-import { useState } from 'react';
+import React, { useState } from 'react';
 import './marker.scss';
 import {
   IonIcon,
 } from '@ionic/react';
 
-import { sendOutline } from 'ionicons/icons';
+import {sendOutline, closeOutline} from 'ionicons/icons';
 
 const Marker = (props: any) => {
   const [showHint, setShowHint] = useState<Boolean>(false);
   const handleClick = () => {
+    var i;
+    var allElements = document.querySelectorAll(".hint");
+    for (i = 0; i < allElements.length; i++) {
+      allElements[i].classList.remove('active');
+    }
     setShowHint(!showHint);
   }
   return <>
@@ -16,6 +21,7 @@ const Marker = (props: any) => {
     <div className="pulse"></div>
     <div className={`text ${props.missionary.position}`} onClick={handleClick}>{props.missionary.title}</div>
       <div className={`hint ${props.missionary.position} ${showHint ? "active" : ""}`}>
+        <IonIcon className="map-marker-close-btn ion-float-right " icon={closeOutline} onClick={handleClick}/>
         <div className="hint-image-container">
           <img src={props.missionary.photo}/>
         </div>
