@@ -1,5 +1,5 @@
 import React from 'react'
-import GoogleMapReact from 'google-map-react';
+import GoogleMapReact, {Maps} from 'google-map-react';
 import Marker from '../mapMarker/marker';
 import { GoogleApiKey } from '../../config';
 import { MapProps } from '../../types/interfaces';
@@ -13,6 +13,13 @@ const center = {
 };
 
 const zoom = 3;
+
+function createMapOptions(maps: Maps) {
+    return {
+        panControl: true,
+        disableDoubleClickZoom: true
+    };
+}
  
 function Map(props: MapProps) {
   return (
@@ -22,6 +29,7 @@ function Map(props: MapProps) {
         bootstrapURLKeys={{ key: GoogleApiKey }}
         defaultCenter={center}
         defaultZoom={zoom}
+        options={createMapOptions}
       >
         {props.missionaries ? props.missionaries.map((missionary, index) => (
           <Marker
