@@ -32,10 +32,10 @@ const Home: React.FC<SignInProps> = ({ setSignedIn}) => {
         <div className="container">
           <img src="assets/ffc-logo.png"/>
           <IonItem>
-            <IonInput value={username} placeholder="Enter username" onIonChange={e => setUsername(e.detail.value!)}></IonInput>
+            <IonInput value={username} placeholder="Enter username" onIonChange={e => setUsername(e.detail.value!)} onKeyPress={(e) => e.key === 'Enter' && submit(username, password)}></IonInput>
           </IonItem>
           <IonItem>
-            <IonInput value={password} type="password" placeholder="Enter password" onIonChange={e => setPassword(e.detail.value!)}></IonInput>
+            <IonInput value={password} type="password" placeholder="Enter password" onIonChange={e => setPassword(e.detail.value!)} onKeyPress={(e) => e.key === 'Enter' && submit(username, password)}></IonInput>
           </IonItem>
           <IonButton expand="full" onClick={e => submit(username, password)}>Submit</IonButton>
         </div>
