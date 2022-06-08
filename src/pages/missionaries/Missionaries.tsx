@@ -2,14 +2,10 @@ import {IonContent, IonHeader, IonPage, IonTitle, IonToolbar, IonCard, IonCardHe
 import React, {useState, useEffect} from 'react';
 import './Missionaries.scss';
 /*import missionaries from '../../data/missionaries';*/
-import {
-    IonIcon,
-} from '@ionic/react';
-
-import {sendOutline} from 'ionicons/icons';
 
 import MissionaryDataService from "../../services/MissionaryService";
 import IMissionaryData from '../../types/Missionary';
+import ContactModal from "../../components/ContactModal/ContactModal";
 
 const Home: React.FC = () => {
     const [missionaries, setMissionaries] = useState<Array<IMissionaryData>>([]);
@@ -53,10 +49,7 @@ const Home: React.FC = () => {
 
                                 <IonCardContent>
                                     {missionary.description}
-                                    <a className="send-cta" href={`mailto:${missionary.email}?subject=Hello from Firm Family Church!&body=We are thinking of you!`} target="ffc">
-                                        <span>Send a message</span>
-                                        <IonIcon icon={sendOutline}/>
-                                    </a>
+                                    <ContactModal missionary={missionary} />
                                 </IonCardContent>
                             </IonCol>
                         </IonRow>
