@@ -4,7 +4,8 @@ import {
   IonIcon,
 } from '@ionic/react';
 
-import {sendOutline, closeOutline} from 'ionicons/icons';
+import {closeOutline} from 'ionicons/icons';
+import ContactModal from "../../components/ContactModal/ContactModal";
 
 const Marker = (props: any) => {
   const [showHint, setShowHint] = useState<Boolean>(false);
@@ -30,10 +31,7 @@ const Marker = (props: any) => {
           <img src={props.missionary.photo}/>
         </div>
         <span>{props.missionary.description}</span>
-        <a className="send-cta ion-hide" href={`mailto:${props.missionary.email}?subject=Hello from Firm Family Church!&body=We are thinking of you!`} target="ffc">
-          <span>Send a message</span> 
-          <IonIcon icon={sendOutline} />
-        </a>
+        <ContactModal missionary={props.missionary} />
       </div> 
   </>
 }

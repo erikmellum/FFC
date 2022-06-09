@@ -1,5 +1,5 @@
 import React from 'react';
-import {IonButton, IonText, useIonAlert} from '@ionic/react';
+import {IonButton, IonCard, IonCardContent, IonCardHeader, IonCardTitle, IonText, useIonAlert} from '@ionic/react';
 import {useForm} from 'react-hook-form';
 import MissionaryService from "../../services/MissionaryService";
 import './ContactForm.scss';
@@ -44,26 +44,45 @@ export const ContactForm = ({missionary}) => {
     };
 
     return <>
-        <IonText>
-            <h3>Send a Message!</h3>
-        </IonText>
-        <form className="contact-form" onSubmit={handleSubmit(onSubmit)}>
-            {/* Name */}
-            <label>Your Name</label>
-            <input {...register("name", {
-                required: {
-                    value: true,
-                    message: "You must enter your name."
-                }
-            })} />
-            {errors.name && <p className="error">{errors.name.message}</p>}
+        <IonCard>
+            <IonCardHeader>
+                <IonCardTitle>Send a Message!</IonCardTitle>
+            </IonCardHeader>
 
-            {/* Message */}
-            <label>Your Message</label>
-            <textarea {...register("message")} />
+            <IonCardContent>
+                <form onSubmit={handleSubmit(onSubmit)}>
+                    {/* Name */}
+                    <label>Your Name</label>
+                    <input {...register("name", {
+                        required: {
+                            value: true,
+                            message: "You must enter your name."
+                        }
+                    })} />
+                    {errors.name && <p className="error">{errors.name.message}</p>}
 
-            {/* Submit */}
-            <IonButton type="submit" className="ion-margin-top" expand="full">Submit</IonButton>
-        </form>
+                    {/* Message */}
+                    <label>Your Message</label>
+                    <textarea {...register("message")} />
+
+                    {/* Email */}
+                    <label>Your Email</label>
+                    <input {...register("email", {
+                        pattern: {
+                            value: /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/,
+                            message: "The email must be a valid email address."
+                        }
+                    })} />
+                    {errors.email && <p className="error">{errors.email.message}</p>}
+
+                    {/* Phone */}
+                    <label>Your Phone Number</label>
+                    <input {...register("phone")} />
+
+                    {/* Submit */}
+                    <IonButton type="submit" className="ion-margin-top" expand="full">Submit</IonButton>
+                </form>
+            </IonCardContent>
+        </IonCard>
     </>
 };
