@@ -2,6 +2,7 @@ import React, {Component, useState} from 'react';
 import {IonButton, IonButtons, IonCard, IonCardContent, IonCardHeader, IonCardSubtitle, IonCardTitle, IonCol, IonContent, IonHeader, IonIcon, IonModal, IonRow, IonTitle, IonToolbar} from "@ionic/react";
 import {sendOutline, close} from "ionicons/icons";
 import {ContactForm} from "../ContactForm/ContactForm";
+import './ContactModal.scss';
 // @ts-ignore
 export const ContactModal = ({missionary}) => {
     const [showModal, setShowModal] = useState(false);
@@ -10,7 +11,7 @@ export const ContactModal = ({missionary}) => {
             <span>Details & Contact</span>
             <IonIcon icon={sendOutline}/>
         </a>
-        <IonModal isOpen={showModal} onDidDismiss={() => setShowModal(false)}>
+        <IonModal isOpen={showModal} onDidDismiss={() => setShowModal(false)} cssClass='modal-fullscreen'>
             <IonHeader>
                 <IonToolbar color="primary">
                     <IonTitle>{missionary.title}</IonTitle>
