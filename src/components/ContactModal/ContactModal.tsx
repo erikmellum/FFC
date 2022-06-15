@@ -1,10 +1,10 @@
-import React, {Component, useState} from 'react';
+import React, {useState, useEffect} from 'react';
 import {IonButton, IonButtons, IonCard, IonCardContent, IonCardHeader, IonCardSubtitle, IonCardTitle, IonCol, IonContent, IonHeader, IonIcon, IonModal, IonRow, IonTitle, IonToolbar} from "@ionic/react";
 import {sendOutline, close} from "ionicons/icons";
 import {ContactForm} from "../ContactForm/ContactForm";
 import './ContactModal.scss';
 // @ts-ignore
-export const ContactModal = ({missionary}) => {
+export const ContactModal = ({missionary, showContactForm}) => {
     const [showModal, setShowModal] = useState(false);
     return <>
         <a className="send-cta" onClick={() => setShowModal(true)}>
@@ -26,7 +26,10 @@ export const ContactModal = ({missionary}) => {
                 <IonRow class="ion-justify-content-start">
                     <IonCol>
                         <IonCard>
-                            <img src={missionary.photo} alt={missionary.title}/>
+                            <div className="ion-text-center">
+                                <img className="missionary-image" src={missionary.photo} alt={missionary.title}/>
+                            </div>
+
                             <IonCardHeader>
                                 <IonCardSubtitle>Location</IonCardSubtitle>
                                 <IonCardTitle>{missionary.location}</IonCardTitle>
@@ -37,7 +40,7 @@ export const ContactModal = ({missionary}) => {
                             </IonCardContent>
                         </IonCard>
                     </IonCol>
-                    <IonCol>
+                    <IonCol className={`${showContactForm === '1' ? "ion-show" : "ion-hide"}`}>
                         <ContactForm missionary={missionary}/>
                     </IonCol>
                 </IonRow>

@@ -5,13 +5,25 @@ import './Missionaries.scss';
 
 import MissionaryDataService from "../../services/MissionaryService";
 import IMissionaryData from '../../types/Missionary';
+import SettingsService from "../../services/SettingsService";
 import ContactModal from "../../components/ContactModal/ContactModal";
 
 const Home: React.FC = () => {
     const [missionaries, setMissionaries] = useState<Array<IMissionaryData>>([]);
+    const [showContactForm, setShowContactForm] = useState<Boolean>(false);
     useEffect(() => {
+        retrieveAppSettings();
         retrieveMissionaries();
     }, []);
+    const retrieveAppSettings = () => {
+        SettingsService.getByName('enable_contact_form')
+            .then((response: any) => {
+                setShowContactForm(response.data.value);
+            })
+            .catch((e: Error) => {
+                console.log(e);
+            });
+    };
     const retrieveMissionaries = () => {
         MissionaryDataService.getAll()
             .then((response: any) => {
@@ -49,7 +61,7 @@ const Home: React.FC = () => {
 
                                 <IonCardContent>
                                     {missionary.description}
-                                    <ContactModal missionary={missionary} />
+                                    <ContactModal missionary={missionary} showContactForm={showContactForm}/>
                                 </IonCardContent>
                             </IonCol>
                         </IonRow>

@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, {useEffect, useState} from 'react';
 import './marker.scss';
 import {
   IonIcon,
@@ -9,6 +9,17 @@ import ContactModal from "../../components/ContactModal/ContactModal";
 
 const Marker = (props: any) => {
   const [showHint, setShowHint] = useState<Boolean>(false);
+  const [shortDescription, setShortDescription] = useState<String>("");
+  useEffect(() => {
+    setShortDescriptionFunction();
+  }, []);
+  const setShortDescriptionFunction = () => {
+    let shortDescription = '';
+    if(props.missionary.description !== null){
+      shortDescription = props.missionary.description.slice(0, 50) + (props.missionary.description.length > 50 ? "..." : "");
+    }
+    setShortDescription(shortDescription);
+  };
   const handleClick = (event: React.MouseEvent, missionary_id: any) => {
     var i;
     var allElements = document.querySelectorAll(".hint");
@@ -30,8 +41,8 @@ const Marker = (props: any) => {
         <div className="hint-image-container">
           <img src={props.missionary.photo}/>
         </div>
-        <span>{props.missionary.description}</span>
-        <ContactModal missionary={props.missionary} />
+        <span>{shortDescription}</span>
+        <ContactModal missionary={props.missionary} showContactForm={props.showContactForm} />
       </div> 
   </>
 }
