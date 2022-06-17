@@ -1,16 +1,17 @@
-import React, {useState, useEffect} from 'react';
+import React, {useState} from 'react';
 import {IonButton, IonButtons, IonCard, IonCardContent, IonCardHeader, IonCardSubtitle, IonCardTitle, IonCol, IonContent, IonHeader, IonIcon, IonModal, IonRow, IonTitle, IonToolbar} from "@ionic/react";
 import {sendOutline, close} from "ionicons/icons";
 import {ContactForm} from "../ContactForm/ContactForm";
+import {ImageGallery} from "../ImageGallery/ImageGallery";
 import './ContactModal.scss';
 // @ts-ignore
 export const ContactModal = ({missionary, showContactForm}) => {
     const [showModal, setShowModal] = useState(false);
     return <>
-        <a className="send-cta" onClick={() => setShowModal(true)}>
+        <button className="send-cta link-button" onClick={() => setShowModal(true)}>
             <span>Details & Contact</span>
             <IonIcon icon={sendOutline}/>
-        </a>
+        </button>
         <IonModal isOpen={showModal} onDidDismiss={() => setShowModal(false)} cssClass='modal-fullscreen'>
             <IonHeader>
                 <IonToolbar color="primary">
@@ -42,6 +43,13 @@ export const ContactModal = ({missionary, showContactForm}) => {
                     </IonCol>
                     <IonCol className={`${showContactForm === '1' ? "ion-show" : "ion-hide"}`}>
                         <ContactForm missionary={missionary}/>
+                    </IonCol>
+                </IonRow>
+                <IonRow>
+                    <IonCol>
+                        <IonCard>
+                            <ImageGallery missionary={missionary}/>
+                        </IonCard>
                     </IonCol>
                 </IonRow>
             </IonContent>

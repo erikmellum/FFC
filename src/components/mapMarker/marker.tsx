@@ -8,7 +8,7 @@ import {closeOutline} from 'ionicons/icons';
 import ContactModal from "../../components/ContactModal/ContactModal";
 
 const Marker = (props: any) => {
-  const [showHint, setShowHint] = useState<Boolean>(false);
+  /*const [showHint, setShowHint] = useState<Boolean>(false);*/
   const [shortDescription, setShortDescription] = useState<String>("");
   useEffect(() => {
     setShortDescriptionFunction();

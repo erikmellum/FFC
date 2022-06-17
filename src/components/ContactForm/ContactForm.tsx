@@ -1,5 +1,5 @@
 import React from 'react';
-import {IonButton, IonCard, IonCardContent, IonCardHeader, IonCardTitle, IonText, useIonAlert} from '@ionic/react';
+import {IonButton, IonCard, IonCardContent, IonCardHeader, IonCardTitle, useIonAlert} from '@ionic/react';
 import {useForm} from 'react-hook-form';
 import MissionaryService from "../../services/MissionaryService";
 import './ContactForm.scss';
