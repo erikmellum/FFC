@@ -1,5 +1,5 @@
 import React, {useState} from 'react';
-import {IonButton, IonButtons, IonCard, IonCardContent, IonCardHeader, IonCardSubtitle, IonCardTitle, IonCol, IonContent, IonHeader, IonIcon, IonItemDivider, IonModal, IonRow, IonTitle, IonToolbar} from "@ionic/react";
+import {IonButton, IonButtons, IonCard, IonCardContent, IonCardHeader, IonCardSubtitle, IonCardTitle, IonCol, IonContent, IonHeader, IonIcon, IonModal, IonRow, IonTitle, IonToolbar} from "@ionic/react";
 import {sendOutline, close} from "ionicons/icons";
 import {ContactForm} from "../ContactForm/ContactForm";
 import {ImageGallery} from "../ImageGallery/ImageGallery";
@@ -25,7 +25,7 @@ export const ContactModal = ({missionary, showContactForm}) => {
             </IonHeader>
             <IonContent className="ion-padding">
                 <IonRow class="ion-justify-content-start">
-                    <IonCol size={`${showContactForm === '1' ? "6" : "12"}`}>
+                    <IonCol>
                         <IonCard>
                             <div className="ion-text-center">
                                 <img className="missionary-image" src={missionary.photo} alt={missionary.title}/>
@@ -38,13 +38,20 @@ export const ContactModal = ({missionary, showContactForm}) => {
 
                             <IonCardContent>
                                 {missionary.description}
-                                <IonItemDivider></IonItemDivider>
-                                <ImageGallery missionary={missionary}/>
                             </IonCardContent>
                         </IonCard>
                     </IonCol>
                     <IonCol className={`${showContactForm === '1' ? "ion-show" : "ion-hide"}`}>
                         <ContactForm missionary={missionary}/>
+                    </IonCol>
+                </IonRow>
+                <IonRow>
+                    <IonCol>
+                        <IonCard>
+                            <IonCardContent>
+                                <ImageGallery missionary={missionary}/>
+                            </IonCardContent>
+                        </IonCard>
                     </IonCol>
                 </IonRow>
             </IonContent>
