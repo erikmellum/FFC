@@ -14,15 +14,17 @@ import './ImageGallery.scss';
 // @ts-ignore
 export const ImageGallery = ({missionary}) => {
     return (
-        <Swiper modules={[Autoplay, Keyboard, Pagination, Scrollbar, Zoom]}
-                autoplay={true}
-                keyboard={true}
-                pagination={true}
-                scrollbar={true}
-                zoom={true}>
-            <SwiperSlide><img className="image" src={missionary.photo} alt={missionary.title}/></SwiperSlide>
-            <SwiperSlide><img className="image" src={missionary.photo} alt={missionary.title}/></SwiperSlide>
-            <SwiperSlide><img className="image" src={missionary.photo} alt={missionary.title}/></SwiperSlide>
-        </Swiper>
+        <div className="ion-padding-top">
+            <Swiper modules={[Autoplay, Keyboard, Pagination, Scrollbar, Zoom]}
+                    autoplay={true}
+                    keyboard={true}
+                    pagination={true}
+                    scrollbar={true}
+                    zoom={true}>
+                <SwiperSlide><img className="image" src={missionary.photo} alt={missionary.title}/></SwiperSlide>
+                <SwiperSlide><img className="image" src={missionary.photo} alt={missionary.title}/></SwiperSlide>
+                <SwiperSlide><img className="image" src={missionary.photo} alt={missionary.title}/></SwiperSlide>
+            </Swiper>
+        </div>
     );
 };

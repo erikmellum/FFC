@@ -1,5 +1,5 @@
 import React, {useState} from 'react';
-import {IonButton, IonButtons, IonCard, IonCardContent, IonCardHeader, IonCardSubtitle, IonCardTitle, IonCol, IonContent, IonHeader, IonIcon, IonModal, IonRow, IonTitle, IonToolbar} from "@ionic/react";
+import {IonButton, IonButtons, IonCard, IonCardContent, IonCardHeader, IonCardSubtitle, IonCardTitle, IonCol, IonContent, IonHeader, IonIcon, IonItemDivider, IonModal, IonRow, IonTitle, IonToolbar} from "@ionic/react";
 import {sendOutline, close} from "ionicons/icons";
 import {ContactForm} from "../ContactForm/ContactForm";
 import {ImageGallery} from "../ImageGallery/ImageGallery";
@@ -25,31 +25,26 @@ export const ContactModal = ({missionary, showContactForm}) => {
             </IonHeader>
             <IonContent className="ion-padding">
                 <IonRow class="ion-justify-content-start">
-                    <IonCol>
+                    <IonCol size={`${showContactForm === '1' ? "6" : "12"}`}>
                         <IonCard>
                             <div className="ion-text-center">
                                 <img className="missionary-image" src={missionary.photo} alt={missionary.title}/>
                             </div>
 
-                            <IonCardHeader>
+                            <IonCardHeader className={`${missionary.location !== null ? "ion-show" : "ion-hide"}`}>
                                 <IonCardSubtitle>Location</IonCardSubtitle>
                                 <IonCardTitle>{missionary.location}</IonCardTitle>
                             </IonCardHeader>
 
                             <IonCardContent>
                                 {missionary.description}
+                                <IonItemDivider></IonItemDivider>
+                                <ImageGallery missionary={missionary}/>
                             </IonCardContent>
                         </IonCard>
                     </IonCol>
                     <IonCol className={`${showContactForm === '1' ? "ion-show" : "ion-hide"}`}>
                         <ContactForm missionary={missionary}/>
-                    </IonCol>
-                </IonRow>
-                <IonRow>
-                    <IonCol>
-                        <IonCard>
-                            <ImageGallery missionary={missionary}/>
-                        </IonCard>
                     </IonCol>
                 </IonRow>
             </IonContent>

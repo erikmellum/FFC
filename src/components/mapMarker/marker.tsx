@@ -39,7 +39,7 @@ const Marker = (props: any) => {
       <div className={`hint hint_${props.missionary.id} ${props.missionary.position}`}>
         <IonIcon className="map-marker-close-btn ion-float-right " icon={closeOutline} onClick={(event) => handleClick(event, props.missionary.id)}/>
         <div className="hint-image-container">
-          <img src={props.missionary.photo}/>
+          <img src={props.missionary.photo} alt={props.missionary.title}/>
         </div>
         <span>{shortDescription}</span>
         <ContactModal missionary={props.missionary} showContactForm={props.showContactForm} />
