@@ -20,9 +20,13 @@ export const ImageGallery = ({missionary}) => {
                 pagination={true}
                 navigation={true}
                 zoom={true}>
-            <SwiperSlide><div className="swiper-zoom-container"><img src={missionary.photo} alt={missionary.title}/></div></SwiperSlide>
-            <SwiperSlide><div className="swiper-zoom-container"><img src={missionary.photo} alt={missionary.title}/></div></SwiperSlide>
-            <SwiperSlide><div className="swiper-zoom-container"><img src={missionary.photo} alt={missionary.title}/></div></SwiperSlide>
+            {missionary.images.map(function (image: any) {
+                return (
+                    <SwiperSlide key={image.id}>
+                        <div className="swiper-zoom-container"><img src={image.image} alt={missionary.title}/></div>
+                    </SwiperSlide>
+                );
+            })}
         </Swiper>
     );
 };

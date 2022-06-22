@@ -45,7 +45,7 @@ export const ContactModal = ({missionary, showContactForm}) => {
                         <ContactForm missionary={missionary}/>
                     </IonCol>
                 </IonRow>
-                <IonRow>
+                <IonRow className={`${missionary.images.length ? "ion-show" : "ion-hide"}`}>
                     <IonCol>
                         <IonCard>
                             <IonCardContent>
