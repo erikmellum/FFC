@@ -6,11 +6,12 @@
   transform: translate(-50%, -50%);
   max-width: 450px;
 }
-ion-icon {
-  pointer-events: none;
-}
 .password-icon {
   font-size: x-large;
+
+  ion-icon {
+    pointer-events: none;
+  }
 }
 .ion-text-preline {
   white-space: pre-line !important;
