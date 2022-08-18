@@ -1,0 +1,5 @@
+/* Google Map styling */
+/* Remove copyright links */
+.gm-style-cc { display:none; }
+/* Remove "View on GoogleMap" link from POIs */
+.view-link {display: none}
