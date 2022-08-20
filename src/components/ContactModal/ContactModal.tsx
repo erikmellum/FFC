@@ -3,6 +3,7 @@ import {IonButton, IonButtons, IonCard, IonCardContent, IonCardHeader, IonCardSu
 import {sendOutline, close} from "ionicons/icons";
 import {ContactForm} from "../ContactForm/ContactForm";
 import {ImageGallery} from "../ImageGallery/ImageGallery";
+import YoutubePlayer from "../YoutubePlayer/YoutubePlayer";
 import './ContactModal.scss';
 // @ts-ignore
 export const ContactModal = ({missionary, showContactForm}) => {
@@ -38,6 +39,7 @@ export const ContactModal = ({missionary, showContactForm}) => {
 
                             <IonCardContent>
                                 {missionary.description}
+                                <YoutubePlayer missionary={missionary}/>
                             </IonCardContent>
                         </IonCard>
                     </IonCol>
